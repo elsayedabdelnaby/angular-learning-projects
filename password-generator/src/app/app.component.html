@@ -1,31 +1,50 @@
-<h1>Password Generator</h1>
+<div class="container">
+  <div class="columns is-centered">
+    <div class="box column is-one-third">
+      <h1 class="title has-text-centered">Password Generator</h1>
 
-<div>
-  <label for="length">Enter Length</label>
-  <input (input)="onChangeLength($event)" />
-</div>
+      <div class="field">
+        <label for="length">Enter Length</label>
+        <input class="input" (input)="onChangeLength($event)" />
+      </div>
 
-<div>
-  <label for="use_letters">Use Letters</label>
-  <input type="checkbox" (change)="onChangeUseLetters()" />
-</div>
+      <div class="field">
+        <div class="control">
+          <label class="checkbox" for="use_letters">
+            <input type="checkbox" (change)="onChangeUseLetters()" />
+            Use Letters
+          </label>
+        </div>
+      </div>
 
-<div>
-  <label for="use_numbers">Use Numbers</label>
-  <input type="checkbox" (change)="onChangeUseNumbers()" />
-</div>
+      <div class="field">
+        <div class="control">
+          <label class="checkbox" for="use_numbers">
+            <input type="checkbox" (change)="onChangeUseNumbers()" />
+            Use Numbers
+          </label>
+        </div>
+      </div>
 
-<div>
-  <label for="use_symbols">Use Symbols</label>
-  <input type="checkbox" (change)="onChangeUseSymbols()" />
-</div>
+      <div class="field">
+        <div class="control">
+          <label class="checkbox" for="use_symbols">
+            <input type="checkbox" (change)="onChangeUseSymbols()" />
+            Use Symbols
+          </label>
+        </div>
+      </div>
 
-<div>
-  <button [disabled]="!(length && (includeLetters || includeNumbers || includeSymbols))"
-    (click)="onButtonClick()">Generate</button>
-</div>
+      <div>
+        <button [disabled]="!(length && (includeLetters || includeNumbers || includeSymbols))" (click)="onButtonClick()"
+          class="button is-link is-fullwidth">Generate</button>
+      </div>
 
-<div>
-  <label for="your_password">Your Password</label>
-  <input type="text" [value]="password" />
+      <div class="box">
+        <label for="your_password">Your Password</label>
+        <input class="input" type="text" [value]="password" />
+      </div>
+
+    </div>
+  </div>
 </div>
