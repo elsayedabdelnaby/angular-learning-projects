@@ -2,7 +2,7 @@
 
 <div>
   <label for="length">Enter Length</label>
-  <input type="text" name="length" id="length" />
+  <input (input)="onChangeLength($event)" />
 </div>
 
 <div>
@@ -21,10 +21,11 @@
 </div>
 
 <div>
-  <button (click)="onButtonClick()">Generate</button>
+  <button [disabled]="!(length && (includeLetters || includeNumbers || includeSymbols))"
+    (click)="onButtonClick()">Generate</button>
 </div>
 
 <div>
   <label for="your_password">Your Password</label>
-  <input type="text" name="your_password" id="your_password" [value]="password" />
+  <input type="text" [value]="password" />
 </div>
