@@ -8,12 +8,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'pipes';
   name: string;
+  date: string;
 
   constructor(){
     this.name = '';
+    this.date = '';
   }
 
   onNameChange($event: Event){
     this.name = ($event.target as HTMLInputElement).value;
+  }
+
+  onDateChange($event: Event){
+    this.date = ($event.target as HTMLInputElement).value;
   }
 }
