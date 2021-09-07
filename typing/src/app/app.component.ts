@@ -7,7 +7,25 @@ import { lorem } from 'faker';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'typing';
-  randomText = lorem.sentence();
+  title: string;
+  randomText: string;
+  enteredText: string;
+
+  constructor() {
+    this.title = "typing";
+    this.randomText = lorem.sentence();
+    this.enteredText = '';
+  }
+
+  onInput(event: Event) {
+    this.enteredText = (event.target as HTMLInputElement).value;
+  }
+
+  compare(randomLetter: string, enteredLetter: string) {
+    if (!enteredLetter) {
+      return 'pending';
+    }
+    return randomLetter === enteredLetter ? 'correct' : 'incorrect';
+  }
 
 }
