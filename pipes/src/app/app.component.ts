@@ -9,17 +9,23 @@ export class AppComponent {
   title = 'pipes';
   name: string;
   date: string;
+  amount: number;
 
-  constructor(){
+  constructor() {
     this.name = '';
     this.date = '';
+    this.amount = 0;
   }
 
-  onNameChange($event: Event){
+  onNameChange($event: Event) {
     this.name = ($event.target as HTMLInputElement).value;
   }
 
-  onDateChange($event: Event){
+  onDateChange($event: Event) {
     this.date = ($event.target as HTMLInputElement).value;
+  }
+
+  onAmountChange($event: Event) {
+    this.amount = parseFloat(($event.target as HTMLInputElement).value);
   }
 }
