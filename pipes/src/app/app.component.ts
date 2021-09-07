@@ -10,11 +10,13 @@ export class AppComponent {
   name: string;
   date: string;
   amount: number;
+  height: number;
 
   constructor() {
     this.name = '';
     this.date = '';
     this.amount = 0;
+    this.height = 0;
   }
 
   onNameChange($event: Event) {
@@ -27,5 +29,9 @@ export class AppComponent {
 
   onAmountChange($event: Event) {
     this.amount = parseFloat(($event.target as HTMLInputElement).value);
+  }
+
+  onHeightChange($event: Event) {
+    this.height = parseFloat(($event.target as HTMLInputElement).value);
   }
 }
