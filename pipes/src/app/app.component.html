@@ -73,6 +73,24 @@
   </div>
   <!-- End Height -->
 
+  <!-- Miles -->
+  <div class="row">
+
+    <div class="form-group col">
+      <label for="miles">Miles</label>
+      <input type="text" class="form-control" (input)="onMilesChange($event)" />
+    </div>
+
+    <div class="col">
+      <label for="miles"><b>Miles</b></label>
+      <div>
+        {{ miles | number: "1.1-3" }}
+      </div>
+    </div>
+
+  </div>
+  <!-- End Miles -->
+
   <!-- Json -->
   <div class="row">
 

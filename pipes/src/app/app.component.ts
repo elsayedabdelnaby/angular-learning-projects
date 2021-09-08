@@ -11,12 +11,14 @@ export class AppComponent {
   date: string;
   amount: number;
   height: number;
+  miles: number;
 
   constructor() {
     this.name = '';
     this.date = '';
     this.amount = 0;
     this.height = 0;
+    this.miles = 0;
   }
 
   car = {
@@ -39,5 +41,9 @@ export class AppComponent {
 
   onHeightChange($event: Event) {
     this.height = parseFloat(($event.target as HTMLInputElement).value);
+  }
+
+  onMilesChange($event: Event) {
+    this.miles = parseFloat(($event.target as HTMLInputElement).value);
   }
 }
