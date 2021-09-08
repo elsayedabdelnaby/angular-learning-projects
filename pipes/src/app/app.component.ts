@@ -19,6 +19,12 @@ export class AppComponent {
     this.height = 0;
   }
 
+  car = {
+    make: 'Toyota',
+    model: 'Camry',
+    year: 2006
+  };
+
   onNameChange($event: Event) {
     this.name = ($event.target as HTMLInputElement).value;
   }
