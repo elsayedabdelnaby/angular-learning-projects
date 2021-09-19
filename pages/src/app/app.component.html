@@ -4,7 +4,7 @@
     <li class="page-item" [appClass]="{ disabled: currentPage === 0 }">
       <a class="page-link" (click)="currentPage = currentPage - 1">Prev</a>
     </li>
-    <ng-container *ngFor="let image of images; let i = index;">
+    <ng-container *appTimes="images.length; let i = index;let c = color;">
       <li class="page-item" [appClass]="{ active: i=== currentPage }" *ngIf="checkWindowIndex(i)">
         <a class="page-link" (click)="currentPage = i">{{ i + 1 }}</a>
       </li>
@@ -21,3 +21,7 @@
   <!-- <h4 [appClass]=" 'orange' ">{{ images[currentPage].title }}</h4> -->
   <img class="img-responsive" src="{{ images[currentPage].url}}" alt="{{ images[currentPage].title }}" />
 </div>
+
+<ul *appTimes="5">
+  <li>Hi there!</li>
+</ul>
