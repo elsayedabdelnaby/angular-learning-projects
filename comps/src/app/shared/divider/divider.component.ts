@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-divider',
@@ -7,8 +7,6 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DividerComponent implements OnInit {
 
-  @Input() title = '';
-  
   constructor() { }
 
   ngOnInit(): void {
